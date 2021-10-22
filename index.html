@@ -131,17 +131,17 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
@@ -192,6 +192,95 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://212.64.71.171/2021/10/22/glFrustum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jfif">
+      <meta itemprop="name" content="RADM">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RADM 的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/22/glFrustum/" class="post-title-link" itemprop="url">openGL里glFrustum函数变换矩阵的推导</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-22 23:19:14" itemprop="dateCreated datePublished" datetime="2021-10-22T23:19:14+08:00">2021-10-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机图形学</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>glFrustum(double l, double r , double b , double t , double n , double f )函数定义了视点在原点、投影中心方向与z轴负方向一致的透视投影的可见四棱台；同时该函数还将其四棱台变化为中心点在原点，边长为2，且与坐标轴对齐的正方体，其中棱台的顶部角点$$(l,b,-n)$$变换到$$(-1,-1,-1)$$，棱台的底部角点$$(\frac{f}{n}r,\frac{f}{n}t,-f)$$变换到$$(1,1,1)$$。这样做有三个好处：将透视投影变为正交投影，便于三维裁剪，保留了场景中物体的z坐标便于消隐。glFrustum的变换矩阵推导如下:</p>
+<ol>
+<li>假设视域体一点为P，则对P点投影有(由相似三角形易知)：</li>
+</ol>
+<p>$$<br>x=\frac{-nx_p}{z_p}\<br>y=\frac{-ny_p}{z_p}\<br>$$</p>
+<ol start="2">
+<li>把x,y坐标从[l,r]，[b,t]映射到[-1,1]，即：</li>
+</ol>
+<p>$$<br>x^{‘}=\frac{2(x-l)}{r-l}-1\<br>y^{‘}=\frac{2(y-b)}{t-b}-1\<br>$$</p>
+<ol start="3">
+<li><p>将1中x,y代入2中,并同乘z<del>p</del>,得：<br>$$<br>x^{‘}z_p=\frac{-2n}{r-l}x_p-\frac{r+l}{r-l}z_p\<br>y^{‘}z_p=\frac{-2n}{t-b}y_p-\frac{t+b}{t-b}z_p\<br>$$</p>
+</li>
+<li><p>z到z^’^的转换不依赖于x,y，则设$z^{‘}z_p=P+Qz_p$，由题知z=-n，z^’^=-1；z=-f，z^’^=1，易解得P=$\frac{2nf}{f-n}$，Q=$\frac{f+n}{f-n}$,即:<br>$$<br>z^{‘}z_p=\frac{2nf}{f-n}+\frac{f+n}{f-n}z_p<br>$$</p>
+</li>
+<li><p>综上所述，得：<br>$$<br>-x^{‘}z_p=\frac{2n}{r-l}x_p+\frac{r+l}{r-l}z_p\<br>-y^{‘}z_p=\frac{2n}{t-b}y_p+\frac{t+b}{t-b}z_p\<br>-z^{‘}z_p=-\frac{f+n}{f-n}z_p-\frac{2nf}{f-n}\<br>-w^{‘}z_p=-z_p（齐次坐标项）<br>$$<br>M为：<br>$$<br>\begin{pmatrix}<br>\frac{2n}{r-l}&amp;0&amp;A&amp;0\<br>0&amp;\frac{2n}{t-b}&amp;B&amp;0\<br>0&amp;0&amp;C&amp;D\<br>0&amp;0&amp;-1&amp;0\<br>\end{pmatrix}<br>A=\frac{r+l}{r-l},B=\frac{t+b}{t-b},C=-\frac{f+n}{f-n},D=-\frac{2nf}{f-n}<br>$$</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
