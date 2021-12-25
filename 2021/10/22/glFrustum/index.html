@@ -21,11 +21,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"212.64.71.171","root":"/","images":"/images","scheme":"Gemini","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ra-dm.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="glFrustum(double l, double r , double b , double t , double n , double f )函数定义了视点在原点、投影中心方向与z轴负方向一致的透视投影的可见四棱台；同时该函数还将其四棱台变化为中心点在原点，边长为2，且与坐标轴对齐的正方体，其中棱台的顶部角点$(l,b,-n)$变换到$(-1,-1,-1)$，棱台的底部角点$(\frac{f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="openGL里glFrustum函数变换矩阵的推导">
-<meta property="og:url" content="http://212.64.71.171/2021/10/22/glFrustum/index.html">
+<meta property="og:url" content="https://ra-dm.github.io/2021/10/22/glFrustum/index.html">
 <meta property="og:site_name" content="RADM 的博客">
 <meta property="og:description" content="glFrustum(double l, double r , double b , double t , double n , double f )函数定义了视点在原点、投影中心方向与z轴负方向一致的透视投影的可见四棱台；同时该函数还将其四棱台变化为中心点在原点，边长为2，且与坐标轴对齐的正方体，其中棱台的顶部角点$(l,b,-n)$变换到$(-1,-1,-1)$，棱台的底部角点$(\frac{f">
 <meta property="og:locale" content="zh_CN">
@@ -37,11 +37,11 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://212.64.71.171/2021/10/22/glFrustum/">
+<link rel="canonical" href="https://ra-dm.github.io/2021/10/22/glFrustum/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://212.64.71.171/2021/10/22/glFrustum/","path":"2021/10/22/glFrustum/","title":"openGL里glFrustum函数变换矩阵的推导"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ra-dm.github.io/2021/10/22/glFrustum/","path":"2021/10/22/glFrustum/","title":"openGL里glFrustum函数变换矩阵的推导"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>openGL里glFrustum函数变换矩阵的推导 | RADM 的博客</title>
@@ -210,7 +210,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://212.64.71.171/2021/10/22/glFrustum/">
+    <link itemprop="mainEntityOfPage" href="https://ra-dm.github.io/2021/10/22/glFrustum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jfif">
@@ -275,29 +275,29 @@
 <li>假设视域体一点为P，则对P点投影有(由相似三角形易知)：</li>
 </ol>
 <p>$$<br>x=\frac{-nx_p}{z_p}\<br>$$</p>
-<p>$$<br>y=\frac{-ny_p}{z_p}\\<br>$$</p>
+<p>$$<br>y=\frac{-ny_p}{z_p}\\\<br>$$</p>
 <ol start="2">
 <li>把x,y坐标从[l,r]，[b,t]映射到[-1,1]，即：</li>
 </ol>
-<p>$$<br>x^{‘}=\frac{2(x-l)}{r-l}-1\\<br>$$</p>
-<p>$$<br>y^{‘}=\frac{2(y-b)}{t-b}-1\\<br>$$</p>
+<p>$$<br>x^{‘}=\frac{2(x-l)}{r-l}-1\\\<br>$$</p>
+<p>$$<br>y^{‘}=\frac{2(y-b)}{t-b}-1\\\<br>$$</p>
 <ol start="3">
 <li>将1中x,y代入2中,并同乘z<del>p</del>,得：</li>
 </ol>
 <p>$$<br>x^{‘}z_p=\frac{-2n}{r-l}x_p-\frac{r+l}{r-l}z_p\<br>$$</p>
-<p>$$<br>y^{‘}z_p=\frac{-2n}{t-b}y_p-\frac{t+b}{t-b}z_p\\<br>$$</p>
+<p>$$<br>y^{‘}z_p=\frac{-2n}{t-b}y_p-\frac{t+b}{t-b}z_p\\\<br>$$</p>
 <ol start="4">
 <li>z到$z^{‘}$的转换不依赖于x,y，则设$z^{‘}z_p=P+Qz_p$，由题知z=-n，$z^{‘}$=-1；z=-f，$z^{‘}$=1，易解得P=$\frac{2nf}{f-n}$，Q=$\frac{f+n}{f-n}$,即:</li>
 </ol>
-<p>$$<br>z^{‘}z_p=\frac{2nf}{f-n}+\frac{f+n}{f-n}z_p\\<br>$$</p>
+<p>$$<br>z^{‘}z_p=\frac{2nf}{f-n}+\frac{f+n}{f-n}z_p\\\<br>$$</p>
 <ol start="5">
 <li>综上所述，得：</li>
 </ol>
 <p>$$<br>-x^{‘}z_p=\frac{2n}{r-l}x_p+\frac{r+l}{r-l}z_p<br>$$</p>
 <p>$$<br>-y^{‘}z_p=\frac{2n}{t-b}y_p+\frac{t+b}{t-b}z_p<br>$$</p>
 <p>$$<br>-z^{‘}z_p=-\frac{f+n}{f-n}z_p-\frac{2nf}{f-n}<br>$$</p>
-<p>$$<br>-w^{‘}z_p=-z_p（齐次坐标项）\\<br>$$</p>
-<p>故M为：<br>$$<br>\begin{pmatrix}<br>\frac{2n}{r-l}&amp;0&amp;A&amp;0\\<br>0&amp;\frac{2n}{t-b}&amp;B&amp;0\\<br>0&amp;0&amp;C&amp;D\\<br>0&amp;0&amp;-1&amp;0\\<br>\end{pmatrix}<br> A=\frac{r+l}{r-l},B=\frac{t+b}{t-b},C=-\frac{f+n}{f-n},D=-\frac{2nf}{f-n}<br>$$</p>
+<p>$$<br>-w^{‘}z_p=-z_p（齐次坐标项）\\\<br>$$</p>
+<p>故M为：<br>$$<br>\begin{pmatrix}<br>\frac{2n}{r-l}&amp;0&amp;A&amp;0\\\<br>0&amp;\frac{2n}{t-b}&amp;B&amp;0\\\<br>0&amp;0&amp;C&amp;D\\\<br>0&amp;0&amp;-1&amp;0\\\<br>\end{pmatrix}<br> A=\frac{r+l}{r-l},B=\frac{t+b}{t-b},C=-\frac{f+n}{f-n},D=-\frac{2nf}{f-n}<br>$$</p>
 
     </div>
 
@@ -315,7 +315,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://212.64.71.171/2021/10/22/glFrustum/" title="openGL里glFrustum函数变换矩阵的推导">http://212.64.71.171/2021/10/22/glFrustum/</a>
+      <a href="https://ra-dm.github.io/2021/10/22/glFrustum/" title="openGL里glFrustum函数变换矩阵的推导">https://ra-dm.github.io/2021/10/22/glFrustum/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！

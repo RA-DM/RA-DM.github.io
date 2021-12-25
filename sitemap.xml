@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://212.64.71.171/2021/10/25/generateCode128C/</loc>
+    <loc>https://ra-dm.github.io/2021/10/25/generateCode128C/</loc>
     
     <lastmod>2021-12-23</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://212.64.71.171/2021/09/15/buildBlog/</loc>
+    <loc>https://ra-dm.github.io/2021/09/15/buildBlog/</loc>
     
     <lastmod>2021-12-23</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://212.64.71.171/2021/10/22/glFrustum/</loc>
+    <loc>https://ra-dm.github.io/2021/10/22/glFrustum/</loc>
     
     <lastmod>2021-10-25</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://212.64.71.171/tags/index.html</loc>
+    <loc>https://ra-dm.github.io/tags/index.html</loc>
     
     <lastmod>2021-10-22</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://212.64.71.171/categories/index.html</loc>
+    <loc>https://ra-dm.github.io/categories/index.html</loc>
     
     <lastmod>2021-10-22</lastmod>
     
@@ -48,7 +48,7 @@
   
 
   <url>
-    <loc>http://212.64.71.171/</loc>
+    <loc>https://ra-dm.github.io/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -56,49 +56,49 @@
 
   
   <url>
-    <loc>http://212.64.71.171/tags/openGL/</loc>
+    <loc>https://ra-dm.github.io/tags/Hexo/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://212.64.71.171/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/</loc>
+    <loc>https://ra-dm.github.io/tags/Next/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://212.64.71.171/tags/Hexo/</loc>
+    <loc>https://ra-dm.github.io/tags/openGL/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://212.64.71.171/tags/Next/</loc>
+    <loc>https://ra-dm.github.io/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://212.64.71.171/tags/ruby/</loc>
+    <loc>https://ra-dm.github.io/tags/ruby/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://212.64.71.171/tags/code128C/</loc>
+    <loc>https://ra-dm.github.io/tags/code128C/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://212.64.71.171/tags/%E6%9D%A1%E5%BD%A2%E7%A0%81%E7%94%9F%E6%88%90/</loc>
+    <loc>https://ra-dm.github.io/tags/%E6%9D%A1%E5%BD%A2%E7%A0%81%E7%94%9F%E6%88%90/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -107,21 +107,21 @@
 
   
   <url>
-    <loc>http://212.64.71.171/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</loc>
+    <loc>https://ra-dm.github.io/categories/%E5%BB%BA%E7%AB%99%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://212.64.71.171/categories/%E5%BB%BA%E7%AB%99%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://ra-dm.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://212.64.71.171/categories/%E6%88%91%E7%9A%84%E9%80%A0%E8%BD%AE%E5%AD%90%E6%97%A5%E5%BF%97/</loc>
+    <loc>https://ra-dm.github.io/categories/%E6%88%91%E7%9A%84%E9%80%A0%E8%BD%AE%E5%AD%90%E6%97%A5%E5%BF%97/</loc>
     <lastmod>2021-12-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
