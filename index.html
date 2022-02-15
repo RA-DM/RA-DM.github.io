@@ -134,7 +134,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -205,6 +205,124 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ra-dm.github.io/2022/02/06/Leetcode_1748_2006/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jfif">
+      <meta itemprop="name" content="RADM">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RADM 的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/06/Leetcode_1748_2006/" class="post-title-link" itemprop="url">Leetcode-1748 && 2006</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-06 12:10:23" itemprop="dateCreated datePublished" datetime="2022-02-06T12:10:23+08:00">2022-02-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-02-15 21:06:13" itemprop="dateModified" datetime="2022-02-15T21:06:13+08:00">2022-02-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%88%91%E7%9A%84%E5%88%B7%E9%A2%98%E6%97%A5%E5%BF%97/" itemprop="url" rel="index"><span itemprop="name">我的刷题日志</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>本文亦载于 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-unique-elements/solution/c-yi-ci-bian-li-by-ra-dm-mcnk/">https://leetcode-cn.com/problems/sum-of-unique-elements/solution/c-yi-ci-bian-li-by-ra-dm-mcnk/</a></p>
+<p>​                    <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k/solution/c-mapjian-dan-ying-yong-by-ra-dm-nrr9/">https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k/solution/c-mapjian-dan-ying-yong-by-ra-dm-nrr9/</a></p>
+</blockquote>
+<h4 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h4><h5 id="1748-唯一元素的和："><a href="#1748-唯一元素的和：" class="headerlink" title="1748 唯一元素的和："></a>1748 唯一元素的和：</h5><p>给你一个整数数组 nums 。数组中唯一元素是那些只出现 <strong>恰好一次</strong> 的元素。</p>
+<p>请你返回 nums 中唯一元素的 <strong>和</strong> 。</p>
+<blockquote>
+<p>题目原链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-unique-elements/">https://leetcode-cn.com/problems/sum-of-unique-elements/</a></p>
+</blockquote>
+<h5 id="2006-差的绝对值为-K-的数对数目："><a href="#2006-差的绝对值为-K-的数对数目：" class="headerlink" title="2006 差的绝对值为 K 的数对数目："></a>2006 差的绝对值为 K 的数对数目：</h5><p>给你一个整数数组 nums 和一个整数 k ，请你返回数对 (i, j) 的数目，满足 i &lt; j 且 |nums[i] - nums[j]| == k 。</p>
+<p>​    |x| 的值定义为：</p>
+<p>​            如果 x &gt;= 0 ，那么值为 x 。<br>​                    如果 x &lt; 0 ，那么值为 -x 。</p>
+<blockquote>
+<p>题目原链：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k">https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k</a></p>
+</blockquote>
+<h4 id="1748："><a href="#1748：" class="headerlink" title="1748："></a>1748：</h4><h5 id="思路：一次遍历、bool数组标志"><a href="#思路：一次遍历、bool数组标志" class="headerlink" title="思路：一次遍历、bool数组标志"></a>思路：一次遍历、bool数组标志</h5><ol>
+<li><p>定义两个bool数组，用nums中的各个元素值num作为下标 (1&lt;= num &lt;= 100)；</p>
+</li>
+<li><p>遍历过程中遇到frequencyFalg不为真的num,判断其minusFlag是否为真：</p>
+<ul>
+<li><p>若是则略过（之前已在结果res中相减）；</p>
+</li>
+<li><p>不是则res减去该num，并改变对应的minusFlag；</p>
+</li>
+</ul>
+</li>
+<li><p>若frequecyFlag为假，则将之相加，改变对应frequencyFlag；</p>
+</li>
+</ol>
+<h5 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumOfUnique</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">bool</span> frequencyFlag[<span class="number">100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">bool</span> minusFlag[<span class="number">100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> num: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!frequencyFlag[num<span class="number">-1</span>])&#123;</span><br><span class="line">                res+=num;</span><br><span class="line">                frequencyFlag[num<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(!minusFlag[num<span class="number">-1</span>])&#123;</span><br><span class="line">                    res-=num;</span><br><span class="line">                    minusFlag[num<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2006："><a href="#2006：" class="headerlink" title="2006："></a>2006：</h4><h5 id="思路：map简单应用"><a href="#思路：map简单应用" class="headerlink" title="思路：map简单应用"></a>思路：map简单应用</h5>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/06/Leetcode_1748_2006/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://ra-dm.github.io/2022/02/04/Leetcode_1725/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -218,7 +336,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/04/Leetcode_1725/" class="post-title-link" itemprop="url">Leetcode-1725</a>
+          <a href="/2022/02/04/Leetcode_1725/" class="post-title-link" itemprop="url">Leetcode-1725 可以形成最大正方形的矩形数目</a>
         </h2>
 
         <div class="post-meta-container">
@@ -236,7 +354,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-02-15 20:49:09" itemprop="dateModified" datetime="2022-02-15T20:49:09+08:00">2022-02-15</time>
+        <time title="修改时间：2022-02-15 20:55:19" itemprop="dateModified" datetime="2022-02-15T20:55:19+08:00">2022-02-15</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -275,6 +393,106 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/02/04/Leetcode_1725/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ra-dm.github.io/2022/02/03/Leetcode_1414/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jfif">
+      <meta itemprop="name" content="RADM">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RADM 的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/03/Leetcode_1414/" class="post-title-link" itemprop="url">Leetcode-1414 和为 K 的最少斐波那契数字数目</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-03 09:21:32" itemprop="dateCreated datePublished" datetime="2022-02-03T09:21:32+08:00">2022-02-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-02-15 21:09:13" itemprop="dateModified" datetime="2022-02-15T21:09:13+08:00">2022-02-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%88%91%E7%9A%84%E5%88%B7%E9%A2%98%E6%97%A5%E5%BF%97/" itemprop="url" rel="index"><span itemprop="name">我的刷题日志</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>本文亦载于 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k/solution/tan-xin-c-by-ra-dm-iuee/">https://leetcode-cn.com/problems/find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k/solution/tan-xin-c-by-ra-dm-iuee/</a></p>
+</blockquote>
+<h4 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h4><p>给你数字 k ，请你返回和为 k 的斐波那契数字的最少数目，其中，每个斐波那契数字都可以被使用多次。</p>
+<p>斐波那契数字定义为：</p>
+<p>​        F1 = 1<br>​                F2 = 1<br>​                Fn = Fn-1 + Fn-2 ， 其中 n &gt; 2 。<br>​        </p>
+<p>数据保证对于给定的 k ，一定能找到可行解。</p>
+<blockquote>
+<p>题目原链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k">https://leetcode-cn.com/problems/find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k</a></p>
+</blockquote>
+<h4 id="思路：贪心"><a href="#思路：贪心" class="headerlink" title="思路：贪心"></a>思路：贪心</h4><ol>
+<li>把两个变量按斐波那契公式增加成小于k的最大的两个数；</li>
+<li>贪心选取，记录选用数字的数目，并将两个数按原来公式递减回去，如此循环直至k==0;</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/03/Leetcode_1414/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog_icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/blog_icon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/blog_icon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="3aa-KGlb-lpnK8h0bkTHbfZN6HyoeZUmmkbPNvndNXQ">
+  <meta name="msvalidate.01" content="F7FF06F8E83DE4CC964472306F672FF5">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ra-dm.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="本文亦载于 https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;sum-of-unique-elements&#x2F;solution&#x2F;c-yi-ci-bian-li-by-ra-dm-mcnk&#x2F; ​                    https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;count-number-of-pairs-with-absolute-differe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode-1748 &amp;&amp; 2006">
+<meta property="og:url" content="https://ra-dm.github.io/2022/02/06/Leetcode_1748_2006/index.html">
+<meta property="og:site_name" content="RADM 的博客">
+<meta property="og:description" content="本文亦载于 https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;sum-of-unique-elements&#x2F;solution&#x2F;c-yi-ci-bian-li-by-ra-dm-mcnk&#x2F; ​                    https:&#x2F;&#x2F;leetcode-cn.com&#x2F;problems&#x2F;count-number-of-pairs-with-absolute-differe">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-06T04:10:23.000Z">
+<meta property="article:modified_time" content="2022-02-15T13:06:13.150Z">
+<meta property="article:author" content="RADM">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="Leetcode">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ra-dm.github.io/2022/02/06/Leetcode_1748_2006/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://ra-dm.github.io/2022/02/06/Leetcode_1748_2006/","path":"2022/02/06/Leetcode_1748_2006/","title":"Leetcode-1748 && 2006"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Leetcode-1748 && 2006 | RADM 的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">RADM 的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">题目：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1748-%E5%94%AF%E4%B8%80%E5%85%83%E7%B4%A0%E7%9A%84%E5%92%8C%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">1748 唯一元素的和：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2006-%E5%B7%AE%E7%9A%84%E7%BB%9D%E5%AF%B9%E5%80%BC%E4%B8%BA-K-%E7%9A%84%E6%95%B0%E5%AF%B9%E6%95%B0%E7%9B%AE%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">2006 差的绝对值为 K 的数对数目：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1748%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">1748：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A%E4%B8%80%E6%AC%A1%E9%81%8D%E5%8E%86%E3%80%81bool%E6%95%B0%E7%BB%84%E6%A0%87%E5%BF%97"><span class="nav-number">2.1.</span> <span class="nav-text">思路：一次遍历、bool数组标志</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">代码：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2006%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">2006：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9Amap%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8"><span class="nav-number">3.1.</span> <span class="nav-text">思路：map简单应用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-1"><span class="nav-number">3.2.</span> <span class="nav-text">代码：</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="RADM"
+      src="/images/avatar.jfif">
+  <p class="site-author-name" itemprop="name">RADM</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/RA-DM" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;RA-DM" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      相关链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/" title="https:&#x2F;&#x2F;github.com" rel="noopener" target="_blank">Github</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://bilibili.com/" title="https:&#x2F;&#x2F;bilibili.com" rel="noopener" target="_blank">Bilibili</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://leetcode-cn.com/" title="https:&#x2F;&#x2F;leetcode-cn.com&#x2F;" rel="noopener" target="_blank">LeetCode</a>
+        </li>
+    </ul>
+  </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ra-dm.github.io/2022/02/06/Leetcode_1748_2006/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jfif">
+      <meta itemprop="name" content="RADM">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RADM 的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Leetcode-1748 && 2006
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-06 12:10:23" itemprop="dateCreated datePublished" datetime="2022-02-06T12:10:23+08:00">2022-02-06</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-02-15 21:06:13" itemprop="dateModified" datetime="2022-02-15T21:06:13+08:00">2022-02-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%88%91%E7%9A%84%E5%88%B7%E9%A2%98%E6%97%A5%E5%BF%97/" itemprop="url" rel="index"><span itemprop="name">我的刷题日志</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>本文亦载于 <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-unique-elements/solution/c-yi-ci-bian-li-by-ra-dm-mcnk/">https://leetcode-cn.com/problems/sum-of-unique-elements/solution/c-yi-ci-bian-li-by-ra-dm-mcnk/</a></p>
+<p>​                    <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k/solution/c-mapjian-dan-ying-yong-by-ra-dm-nrr9/">https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k/solution/c-mapjian-dan-ying-yong-by-ra-dm-nrr9/</a></p>
+</blockquote>
+<h4 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h4><h5 id="1748-唯一元素的和："><a href="#1748-唯一元素的和：" class="headerlink" title="1748 唯一元素的和："></a>1748 唯一元素的和：</h5><p>给你一个整数数组 nums 。数组中唯一元素是那些只出现 <strong>恰好一次</strong> 的元素。</p>
+<p>请你返回 nums 中唯一元素的 <strong>和</strong> 。</p>
+<blockquote>
+<p>题目原链接：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-unique-elements/">https://leetcode-cn.com/problems/sum-of-unique-elements/</a></p>
+</blockquote>
+<h5 id="2006-差的绝对值为-K-的数对数目："><a href="#2006-差的绝对值为-K-的数对数目：" class="headerlink" title="2006 差的绝对值为 K 的数对数目："></a>2006 差的绝对值为 K 的数对数目：</h5><p>给你一个整数数组 nums 和一个整数 k ，请你返回数对 (i, j) 的数目，满足 i &lt; j 且 |nums[i] - nums[j]| == k 。</p>
+<p>​    |x| 的值定义为：</p>
+<p>​            如果 x &gt;= 0 ，那么值为 x 。<br>​                    如果 x &lt; 0 ，那么值为 -x 。</p>
+<blockquote>
+<p>题目原链：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k">https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k</a></p>
+</blockquote>
+<h4 id="1748："><a href="#1748：" class="headerlink" title="1748："></a>1748：</h4><h5 id="思路：一次遍历、bool数组标志"><a href="#思路：一次遍历、bool数组标志" class="headerlink" title="思路：一次遍历、bool数组标志"></a>思路：一次遍历、bool数组标志</h5><ol>
+<li><p>定义两个bool数组，用nums中的各个元素值num作为下标 (1&lt;= num &lt;= 100)；</p>
+</li>
+<li><p>遍历过程中遇到frequencyFalg不为真的num,判断其minusFlag是否为真：</p>
+<ul>
+<li><p>若是则略过（之前已在结果res中相减）；</p>
+</li>
+<li><p>不是则res减去该num，并改变对应的minusFlag；</p>
+</li>
+</ul>
+</li>
+<li><p>若frequecyFlag为假，则将之相加，改变对应frequencyFlag；</p>
+</li>
+</ol>
+<h5 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">sumOfUnique</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">bool</span> frequencyFlag[<span class="number">100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">bool</span> minusFlag[<span class="number">100</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> num: nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(!frequencyFlag[num<span class="number">-1</span>])&#123;</span><br><span class="line">                res+=num;</span><br><span class="line">                frequencyFlag[num<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(!minusFlag[num<span class="number">-1</span>])&#123;</span><br><span class="line">                    res-=num;</span><br><span class="line">                    minusFlag[num<span class="number">-1</span>]=<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2006："><a href="#2006：" class="headerlink" title="2006："></a>2006：</h4><h5 id="思路：map简单应用"><a href="#思路：map简单应用" class="headerlink" title="思路：map简单应用"></a>思路：map简单应用</h5><span id="more"></span>
+
+<ol>
+<li><p>判断|nums[i]-nums[j]|=k是否成立，即判断nums[i]+k==nums[j] / nums[i]-k ==nums[j]这两个式子中是否有一个成立；</p>
+</li>
+<li><p>因为i&lt;j，对数组里较后的元素j来说，我们仅需判断j之前的若干个元素i里有几个满足上述两个式子（nums[i]+k==nums[j]……）；</p>
+</li>
+<li><p>为了实现上述目的，我们定义一个map，nums[i]+k,nums[i]-k为键，出现次数为值。对nums遍历，其中的每一个元素num，均将num+k和num-k存入map中，同时判断map是否存在键num，存在则意味着在num之前的元素里有满足两个式子的，我们把其出现次数加入结果。最终遍历完整个数组，我们能得到结果。</p>
+</li>
+</ol>
+<h5 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countKDifference</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; numsDict; <span class="comment">//存储nums[i]+k,nums[i]-k和出现次数的映射关系</span></span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> num: nums)&#123;</span><br><span class="line">            numsDict[num+k]+=<span class="number">1</span>;</span><br><span class="line">            numsDict[num-k]+=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(numsDict.<span class="built_in">find</span>(num)!=numsDict.<span class="built_in">end</span>())&#123;</span><br><span class="line">                res+=numsDict[num];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>RADM
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://ra-dm.github.io/2022/02/06/Leetcode_1748_2006/" title="Leetcode-1748 &amp;&amp; 2006">https://ra-dm.github.io/2022/02/06/Leetcode_1748_2006/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/02/04/Leetcode_1725/" rel="prev" title="Leetcode-1725 可以形成最大正方形的矩形数目">
+                  <i class="fa fa-chevron-left"></i> Leetcode-1725 可以形成最大正方形的矩形数目
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RADM</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Supported by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
